@@ -40,6 +40,7 @@ module.exports = class imgToAscii {
 		this.loadImage = new Promise( (resolve,reject) =>{
 			this.image = new Image();
 			this.image.src = this.imageSrc;
+			this.image.crossOrigin = "Anonymous";
 			this.image.onload = ()=> {
 				this.canvas = document.createElement('canvas');
 				this.canvas.width = this.image.width * this.size;
