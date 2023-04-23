@@ -107,8 +107,6 @@ module.exports = class imgToAscii {
 								}
 							}
 
-							console.log(closest, closestDistance);
-
 							this.stringANSIColor += this.ansi_colors[closest] + char + this.ansi_colors.reset;
 
 							this.stringANSI8BitColor += "\x1B[38;2;" + r + ";" + g + ";" + b + "m" + char + "\x1B[39m";
