@@ -23,7 +23,7 @@ https://github.com/victorqribeiro/imgToAscii
 
 */
 
-class imgToAscii {
+module.exports = class imgToAscii {
 	constructor(image,size,charType){
 		this.size = ( size <= 0 || size > 1 ? 1 : size) || 1;
 		this.charType = charType || 0;
