@@ -24,8 +24,7 @@ https://github.com/victorqribeiro/imgToAscii
 */
 
 module.exports = class imgToAscii {
-	constructor(image,size,charType){
-		this.size = ( size <= 0 || size > 1 ? 1 : size) || 1;
+	constructor(image,width,height,charType){
 		this.charType = charType || 0;
 		this.alphabet = {
 			0: ["@","%","#","*","+","=","-",":","."," "],
@@ -43,8 +42,8 @@ module.exports = class imgToAscii {
 			this.image.crossOrigin = "Anonymous";
 			this.image.onload = ()=> {
 				this.canvas = document.createElement('canvas');
-				this.canvas.width = this.image.width * this.size;
-				this.canvas.height = this.image.height * this.size;
+				this.canvas.width = width || this.image.width;
+				this.canvas.height = height || this.image.height;
 				this.context = this.canvas.getContext('2d');
 				this.context.drawImage(this.image, 0, 0, this.canvas.width, this.canvas.height);
 				this.imageData = this.context.getImageData(0,0,this.canvas.width,this.canvas.height);
