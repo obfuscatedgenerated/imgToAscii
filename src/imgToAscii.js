@@ -24,6 +24,8 @@ https://github.com/obfuscatedgenerated/imgToAscii
 
 */
 
+// No attempt has been made to refactor the code when forked, only to add small features.
+
 module.exports = class imgToAscii {
 	constructor(image, width, height, charType) {
 		this.charType = charType || 0;
